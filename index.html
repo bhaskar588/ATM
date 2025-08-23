@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SBI Bank ATM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="atm-container">
+        <h1>🏦 Welcome to SBI Bank ATM</h1>
+
+        <div class="menu">
+            <button onclick="showWithdraw()">Withdraw</button>
+            <button onclick="showDeposit()">Deposit</button>
+            <button onclick="checkBalance()">Check Balance</button>
+            <button onclick="exitATM()">Exit</button>
+        </div>
+
+        <div id="form-section" class="form-section">
+            <input type="number" id="amount" placeholder="Enter amount" />
+            <button id="actionBtn">Submit</button>
+        </div>
+
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
