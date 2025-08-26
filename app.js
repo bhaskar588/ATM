@@ -15,6 +15,15 @@ function showWithdraw() {
             showMessage('⚠ Please enter a valid amount.');
             return;
         }
+         if (amount < 100) {
+            showMessage('⚠ Minimum withdrawal amount is ₹100.');
+            return;
+        }
+        if (amount % 100 !== 0) {
+            showMessage('⚠ ATM only dispenses multiples of ₹100 (no ₹10, ₹20, ₹5). Please enter a valid amount.');
+            return;
+        }
+
         if (amount > balance) {
             showMessage('⚠ Insufficient Balance!');
         } else {
@@ -32,6 +41,14 @@ function showDeposit() {
         const amount = parseFloat(amountInput.value);
         if (isNaN(amount) || amount <= 0) {
             showMessage('⚠ Please enter a valid amount.');
+            return;
+        }
+        if (amount < 100) {
+            showMessage('⚠ Minimum deposit amount is ₹100.');
+            return;
+        }
+         if (amount % 100 !== 0) {
+            showMessage('⚠ ATM only accepts deposits in multiples of ₹100. Please enter a valid amount.');
             return;
         }
         balance += amount;
